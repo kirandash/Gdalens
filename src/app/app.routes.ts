@@ -5,6 +5,7 @@ export const routes = [
     { path: '', redirectTo: 'artists', pathMatch: 'full' },
     { path: 'videos', component: VideoCategoryListComponent },
     { path: "videos/:slug", component: VideoListComponent },
+    { path: "videos/:slug/:vdata", component: VideoListComponent },
     { path: 'artists', loadChildren: './artists/artists.module#ArtistsModule' },
     { path: 'playlists', loadChildren: './playlist/playlist.module#PlaylistModule' },
     { path: 'queue', loadChildren: './queue/queue.module#QueueModule' },

@@ -7,8 +7,8 @@
       <div class="subtitle">
         <div>
           <mat-chip-list>
-            <mat-chip><a href="#">Besøg os</a></mat-chip>
-            <mat-chip><a href="#">Meld dig ind</a></mat-chip>
+            <mat-chip><a [routerLink]="['/videos', video.slug, 'besog-os']">Besøg os</a></mat-chip>
+            <mat-chip><a [routerLink]="['/videos', video.slug, 'meld-dig-ind']">Meld dig ind</a></mat-chip>
           </mat-chip-list>
         </div>
       </div>
