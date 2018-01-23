@@ -35,6 +35,8 @@ import { VideoCategoryListComponent } from './videos/video-category-list/video-c
 
 //Services
 import { VideoCategoryService } from './videos/services/video-category.service';
+import { VideoListComponent } from './videos/video-list/video-list.component';
+import { VideoListService } from './videos/services/video-list.service';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { VideoCategoryService } from './videos/services/video-category.service';
     PlaylistCreateComponent,
     PlaylistAddSongComponent,
     VideoCategoryListComponent,
+    VideoListComponent,
   ],
   entryComponents: [
     PlaylistCreateComponent,
@@ -68,7 +71,8 @@ import { VideoCategoryService } from './videos/services/video-category.service';
   providers: [
     AuthEffects,
     ArtistsEffects,
-    VideoCategoryService
+    VideoCategoryService,
+    VideoListService
   ],
   bootstrap: [AppComponent]
 })
