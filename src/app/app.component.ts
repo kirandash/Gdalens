@@ -21,7 +21,7 @@ import { NavigationEnd } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Glamsdalens';
+  title = 'Glamsdalen';
   @ViewChild('sidenav') sidenav: MatSidenav;
   navMode = 'side';
 

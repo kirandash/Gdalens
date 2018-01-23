@@ -31,6 +31,7 @@ import { routes } from './app.routes';
 import { PlaylistCreateComponent } from './components/playlist-create/playlist-create.component';
 import { PlaylistAddSongComponent } from './components/playlist-add-song/playlist-add-song.component';
 import { ArtistsStaticEffects } from './store/effects/static/artists.effects';
+import { VideoCategoryListComponent } from './videos/video-category-list/video-category-list.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ArtistsStaticEffects } from './store/effects/static/artists.effects';
     SidebarComponent,
     PlaylistCreateComponent,
     PlaylistAddSongComponent,
+    VideoCategoryListComponent,
   ],
   entryComponents: [
     PlaylistCreateComponent,
