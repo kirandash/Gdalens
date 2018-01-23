@@ -33,6 +33,9 @@ import { PlaylistAddSongComponent } from './components/playlist-add-song/playlis
 import { ArtistsStaticEffects } from './store/effects/static/artists.effects';
 import { VideoCategoryListComponent } from './videos/video-category-list/video-category-list.component';
 
+//Services
+import { VideoCategoryService } from './videos/services/video-category.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +68,7 @@ import { VideoCategoryListComponent } from './videos/video-category-list/video-c
   providers: [
     AuthEffects,
     ArtistsEffects,
+    VideoCategoryService
   ],
   bootstrap: [AppComponent]
 })

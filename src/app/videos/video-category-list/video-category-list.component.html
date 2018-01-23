@@ -1,3 +1,17 @@
-<p>
-  video-category-list works!
-</p>
+<div class="video-list">
+  <div class="video-item" *ngFor="let video of videos">
+    <app-card [image]="video.image" [imageAlt]="video.name" [link]="['/videos', video.slug]" [linkText]="'See Videos'">
+      <div class="title">
+        <a [routerLink]="['/videos', video.slug]" class="video-name-link">{{video.name}}</a>
+      </div>
+      <div class="subtitle">
+        <div>
+          <mat-chip-list>
+            <mat-chip><a href="#">Besøg os</a></mat-chip>
+            <mat-chip><a href="#">Meld dig ind</a></mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>

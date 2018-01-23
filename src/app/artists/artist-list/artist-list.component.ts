@@ -21,6 +21,7 @@ export class ArtistListComponent implements OnInit {
   constructor(private store: Store<State>, private router: Router) {
     this.filters = store.select('filters');
     this.artists = store.select('artists').map((artists: ArtistStateType) => {
+      //console.log(artists);
       return artists.list.map(n => artists.items[n]);
     });
   }
