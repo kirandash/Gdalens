@@ -34,7 +34,7 @@ export class VideoListComponent implements OnInit {
           self.videos = response;
           // console.log(this.videos);
         }else{
-          self.videocontent = response[slug]; 
+          self.videocontent = response; 
         }
   		});
   	});
