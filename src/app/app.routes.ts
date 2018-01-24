@@ -3,10 +3,11 @@ import { VideoListComponent } from './videos/video-list/video-list.component';
 
 export const routes = [
     { path: '', redirectTo: 'artists', pathMatch: 'full' },
-    { path: 'videos', component: VideoCategoryListComponent },
+    /*{ path: 'videos', component: VideoCategoryListComponent },
     { path: "videos/:slug", component: VideoListComponent },
-    { path: "videos/:slug/:vdata", component: VideoListComponent },
+    { path: "videos/:slug/:vdata", component: VideoListComponent },*/
     { path: 'artists', loadChildren: './artists/artists.module#ArtistsModule' },
+    { path: 'videos', loadChildren: './videos/videos.module#VideosModule' },
     { path: 'playlists', loadChildren: './playlist/playlist.module#PlaylistModule' },
     { path: 'queue', loadChildren: './queue/queue.module#QueueModule' },
     { path: 'user', loadChildren: './user/user.module#UserModule' },

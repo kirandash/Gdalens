@@ -31,12 +31,6 @@ import { routes } from './app.routes';
 import { PlaylistCreateComponent } from './components/playlist-create/playlist-create.component';
 import { PlaylistAddSongComponent } from './components/playlist-add-song/playlist-add-song.component';
 import { ArtistsStaticEffects } from './store/effects/static/artists.effects';
-import { VideoCategoryListComponent } from './videos/video-category-list/video-category-list.component';
-
-//Services
-import { VideoCategoryService } from './videos/services/video-category.service';
-import { VideoListComponent } from './videos/video-list/video-list.component';
-import { VideoListService } from './videos/services/video-list.service';
 
 @NgModule({
   declarations: [
@@ -44,9 +38,7 @@ import { VideoListService } from './videos/services/video-list.service';
     HeaderComponent,
     SidebarComponent,
     PlaylistCreateComponent,
-    PlaylistAddSongComponent,
-    VideoCategoryListComponent,
-    VideoListComponent,
+    PlaylistAddSongComponent
   ],
   entryComponents: [
     PlaylistCreateComponent,
@@ -70,9 +62,7 @@ import { VideoListService } from './videos/services/video-list.service';
   ],
   providers: [
     AuthEffects,
-    ArtistsEffects,
-    VideoCategoryService,
-    VideoListService
+    ArtistsEffects
   ],
   bootstrap: [AppComponent]
 })
