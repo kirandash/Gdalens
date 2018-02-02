@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		
+		<title>Ticksy: Printing &ldquo;gdalens&rdquo;</title>
+		<link rel="stylesheet" href="https://themonkeythemes.ticksy.com/app/_theme/shared_assets/css/print_styling.css?v=3.9.12" type="text/css" media="screen,print" />	
+		
+	</head>
+	<body><h1 class="page-title">gdalens</h1><h2 class='section-title'>Contents</h2><section class='article-content-block'><h3>1. Installation</h3><h3>2. Application structure</h3><h3>3. Styles - Material design configuration</h3><h3>4. Credits</h3><h3>5. Styles - sass global structure</h3><h3>6. Modules</h3><h3>7. Icons</h3><h3>8. State management with NGRX</h3></section><h2 class='section-title'>1. Installation</h2><section class='article-content-block'><h4>Installing</h4>
+<p>To deploy the theme simply copy the zip file inside Main Sources/gdalens.zip&nbsp;put the files into your webserver (ex : www.example.com) and navigate to it through the browser</p>
+<h2>Development server</h2>
+<p>Run&nbsp;<code>ng serve</code>&nbsp;for a dev server. Navigate to&nbsp;<code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
+<h2>Code scaffolding</h2>
+<p>Run&nbsp;<code>ng generate component component-name</code>&nbsp;to generate a new component. You can also use&nbsp;<code>ng generate directive|pipe|service|class|module</code>.</p>
+<p>For more information and more commands available for scaffolding&nbsp;refer to the&nbsp;<a href="https://cli.angular.io/" target="_blank"  rel="nofollow">AngularCLI documentation site</a></p>
+<h2>Build</h2>
+<p>Run&nbsp;<code>ng build</code>&nbsp;to build the project. The build artifacts will be stored in the&nbsp;<code>dist/</code>&nbsp;directory. Use the&nbsp;<code>-prod</code>&nbsp;flag for a production build.</p>
+<h2>Running unit tests</h2>
+<p>Run&nbsp;<code>ng test</code>&nbsp;to execute the unit tests via&nbsp;<a href="https://karma-runner.github.io/"  rel="nofollow">Karma</a>.</p>
+<h2>Running end-to-end tests</h2>
+<p>Run&nbsp;<code>ng e2e</code>&nbsp;to execute the end-to-end tests via&nbsp;<a href="http://www.protractortest.org/"  rel="nofollow">Protractor</a>. Before running the tests make sure you are serving the app via&nbsp;<code>ng serve</code>.</p>
+<h2>Firebase&nbsp;</h2>
+<p>The theme includes integration out-of-the-box with firebase.&nbsp;To enable firebase <a href="https://firebase.google.com/docs/web/setup" target="_blank"  rel="nofollow">follow the steps in firebase documentation for setting up a web project</a> and then do the following in the project :&nbsp;</p>
+<h3>Enable firebase and setup credentials</h3>
+<p>go to <span></span><em><strong>src / environments / environment.ts</strong></em><span></span> and set the firebase credentials with the ones provided in your firebase project :&nbsp;</p>
+<pre>
+ apiKey: "&lt;API_KEY&gt;",&nbsp; &nbsp; 
+&nbsp;authDomain: "&lt;PROJECT_ID&gt;.firebaseapp.com",&nbsp; &nbsp; 
+ databaseURL: "https://&lt;DATABASE_NAME&gt;.firebaseio.com",&nbsp; &nbsp; 
+ storageBucket: "&lt;BUCKET&gt;.appspot.com",&nbsp; &nbsp; 
+ messagingSenderId: "&lt;SENDER_ID&gt;",</pre>
+<p>Set staticData to false :&nbsp;</p>
+<pre>
+// set this to true to use static data from "data" folder
+export const staticData = false;</pre></section><h2 class='section-title'>2. Application structure</h2><section class='article-content-block'><p>The application is organized in a way that is easy to fnd and change any script,&nbsp; and complying with the standards defined in the <a href="https://angular.io/guide/styleguide" target="_blank"  rel="nofollow">angular styleguide</a></p>
+<h2>Source folder (src)</h2>
+<p>Contains all the application logic, it includes the index (html file) all components, modules service and assets for the application.</p>
+<h3>app</h3>
+<p>The application logic lives here. It includes all components, services, modules and route definitions. If you are looking for any component this folder is where it will be located. The folder is organized by modules, the root folder includes the app module (app.module.ts). All other modules have their own folder (user, artists, playlist etc).</p>
+<h3>assets</h3>
+<p>Includes all the assets for the theme. Images and sample data (only applicable when not using firebase)&nbsp;are included here.</p>
+<h3>environments</h3>
+<p>Configuration for environment. Includes things that you may want to differentiate from production and development like :&nbsp;</p>
+<ul><li>firebase configuration</li><li>whether to use or not firebase</li><li>production flag</li></ul><h3>styles</h3><p>Includes all the global styles and definition for the material theme.&nbsp;More information is available on the <strong>Styles -Material Configuration</strong> section</p><h3>index.html</h3><p>The index.html for the application</p></section><h2 class='section-title'>3. Styles - Material design configuration</h2><section class='article-content-block'><p>This section is about how to setup the material theme and how to configure and organize styles in the theme.&nbsp;The theme uses the new version of&nbsp;<a href="https://material.angular.io/"  rel="nofollow">https://material.angular.io/</a>&nbsp;</p>
+<p>Material is super flexible for configuring styles and themes and comes with built-in components that you can leverage very easily.</p>
+<h2>Configuring a new theme</h2>
+<p>The theme comes with two variations of theming, a dark version and a light version. Configuration for these themes can be done in the folder "<em><strong>src / styles / layout / material_theme.scss</strong></em>"</p>
+<p>This file is just a regular sass file that includes some specific theming mixins to setup a new theme. For information on colors and codes refer to both the <a href="https://material.io/guidelines/style/color.html" target="_blank"  rel="nofollow">Guidelines</a>&nbsp;as well as the official material for angular <a href="https://material.angular.io/guide/theming" target="_blank"  rel="nofollow">documentation for theming</a></p>
+<h3>Setting up the light theme&nbsp;</h3>
+<pre>
+//Here the existing theme is being redfined
+$primary:  mat-palette($mat-pink, 500, 600, 500);
+$accent: mat-palette($mat-blue-grey, 500, 600, 500);
+$theme: mat-light-theme($primary, $accent);
+$_umbra-color: rgba(150, 150, 150, 0.2);
+$_penumbra-color: rgba(150, 150, 150, 0.14);
+$_ambient-color: rgba(150, 150, 150, 0.12);
+@include angular-material-theme($theme);</pre>
+<p>This sets up a primary color and an alternate color (accent), in this case by default the pink and blue-grey colors are used. You can easily change these colors for any other color. also in this section a umbra, penumbra and ambient colors are defined.&nbsp;</p>
+<p>The <a href="https://material.io/color/#!/?view.left=0&view.right=0" target="_blank"  rel="nofollow">material design color tool</a> provides a good way to test colors and try new versions of the color scheme.</p>
+<h3>Setting up the dark theme</h3>
+<pre>
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-green, A700, 600, 500);
+$dark-accent:  mat-palette($mat-blue-grey, 50, 600, 500);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.gdalens-dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.gdalens-dark-theme {  
+  @include angular-material-theme($dark-theme);  @include custom-theme($dark-theme);
+}</pre>
+<p>&nbsp;The dark theme is configured and its using a .gdalens-dark-theme for activating it.</p>
+<p>Activating the dark theme by default can be done in the <strong>app.component.ts</strong> file inside "<strong>src/app/"</strong> folder :&nbsp;</p>
+<pre>
+darkTheme = true;</pre></section><h2 class='section-title'>4. Credits</h2><section class='article-content-block'><p>The following scripts and frameworks where used in the development of this theme :&nbsp;</p><ul><li>Angular :&nbsp;<a href="https://angular.io/" rel="nofollow">https://angular.io/</a></li><li>Angular cli :&nbsp;<a href="https://cli.angular.io/" rel="nofollow">https://cli.angular.io/</a></li><li>Rxjs :&nbsp;<a href="http://reactivex.io/rxjs/" rel="nofollow">http://reactivex.io/rxjs/</a></li><li>ngrx :&nbsp;<a href="https://github.com/ngrx" rel="nofollow">https://github.com/ngrx</a></li><li>ngx-charts :&nbsp;<a href="https://swimlane.github.io/ngx-charts/" rel="nofollow">https://swimlane.github.io/ngx-charts/</a></li><li>material design for angular :&nbsp;<a href="https://material.angular.io/" rel="nofollow">https://material.angular.io/</a></li><li>D3 :&nbsp;<a href="https://d3js.org/" rel="nofollow">https://d3js.org/</a></li><li>Firebase :&nbsp;<a href="https://firebase.google.com/" rel="nofollow">https://firebase.google.com/</a></li><li>howler :&nbsp;<a href="https://howlerjs.com/" rel="nofollow">https://howlerjs.com/</a></li><li>ngx-infinite-scroll :&nbsp;<a href="https://github.com/orizens/ngx-infinite-scroll" rel="nofollow">https://github.com/orizens/ngx-infinite-scroll</a></li></ul><p>The following sites where used to get images for the demo of the theme</p><ul><li>unsplash :&nbsp;<a href="https://unsplash.com/" rel="nofollow">https://unsplash.com/</a></li></ul><p></p>
+</section><h2 class='section-title'>5. Styles - sass global structure</h2><section class='article-content-block'><p>The theme comes with some global sass files that help in setting up a base for the website layout, define useful mixins for media queries&nbsp;as well as override some global material design classes and elements.</p>
+<h2>Layout&nbsp;</h2>
+<p>The layout folder inside <strong>styles provides some </strong>layout base structure for the app. it includes two files :&nbsp;</p>
+<h3>styles.scss</h3>
+<p>This file should contain all the global styles for the app. Global styles are not encapsulated for any component and are used "as-is" in the app.&nbsp;It includes several things like :&nbsp;</p>
+<ul><li>body styling</li><li>input layout</li><li>global Material Overrides</li><li>Headings styling</li><li>Visibility help classes</li></ul>
+<h3>material_theme.scss</h3>
+<p>The material design theme file was documented in the<a href="https://themonkeythemes.ticksy.com/article/12231" target="_blank"  rel="nofollow">Styles - Material design configuration article</a>, refer to that article for information about this file.<br></p><h2>settings</h2><p>the settings folder contains all global variables used by the theme. these include things like generic colors or breakpoints for media queries. It includes by default two files :&nbsp;</p><h3>colors.scss</h3><p>Includes generic colours to be used throughout the theme.</p><h3>breakpoints.scss</h3><p>Includes mixins and variables for media queries usage. To include a block inside a media query do as following:&nbsp;</p><pre>
+@include breakpoint($narrow-devices) {        
+    // this code will be included only when devices are bigger than variable set in $narrow-devices 
+}</pre><p><br></p></section><h2 class='section-title'>6. Modules</h2><section class='article-content-block'><p>The app is separated using NgModules for lazyloading and better performance. here is an overview of what each module does and where to find them</p>
+<h2>Artists (src/app/artists)</h2>
+<p>The artists module is activated when navigating to /artists in the application.&nbsp;This module includes the following components&nbsp;:&nbsp;</p>
+<ul><li>artist-album-list : List of albums for an artist</li><li>artist-country-fan-chart : The country fan chart component displayed in the artist detail page</li><li>artist-detail : The artist detail page</li><li>artist-list : the list of artists available</li><li>artists-album-playable : The card that holds each song of a album from a given artist</li></ul>
+<p>It also includes a services useful for the artists module which is responsible for dealing with any action done in the artists components.</p>
+<h2>Playlist (src/app/playlist)</h2>
+<p>The playlist module is activated when navigating to /playlist in the application.&nbsp;This module includes the following components&nbsp;:&nbsp;</p>
+<ul><li>playlist-detail : The detail of a given playlist</li><li>playlist-list&nbsp;: The list of public playlists available in the app</li><li>playlist-me : The list of playlists for a given user (only available in the firebase version)</li><li>playlist-songs-playable&nbsp;: The card that holds each song of a playlist to play</li></ul>
+<h2>Queue (src/app/queue)</h2>
+<p>The queue module is activated when navigating to /queue in the application.&nbsp;This module includes the following components&nbsp;:&nbsp;</p>
+<ul><li>queue-list&nbsp;: The list of songs playing in the queue currently</li></ul>
+<h2>Shared (src/app/shared)</h2>
+<p><br>The shared module includes everything that should be shared though every lazy loaded module in the application. you can find more information about shared modules in&nbsp;<a href="https://angular.io/guide/ngmodule#shared-modules"  rel="nofollow">https://angular.io/guide/ngmodule#shared-modules</a>.&nbsp;This module includes all the material design components, custom shared components, any relevant pipes and services that should be used by more than one ngModule.</p><h2>Ui-elements</h2><p>The ui elements module is just a sample module. it is used to illustrate possible ways of using built-in components in the app. it can be removed or disabled if not used in a live app. But it provides a good way of documenting how to use :&nbsp;</p><ul><li>Buttons</li><li>Forms</li><li>Charts</li><li>Widgets</li><li>other custom components like weather widges or icons</li></ul></section><h2 class='section-title'>7. Icons</h2><section class='article-content-block'><p>The theme includes a set of Material design icons.&nbsp;The icons are super easy to use by including the icon component from material design library. You can find a full list of available icons in&nbsp;<a href="https://material.io/icons/" rel="nofollow">https://material.io/icons/</a></p><h2>Including an icon&nbsp;</h2><p>Including an icon is as simple as adding the icon component and specifying the icon inside the component&nbsp;</p><pre>
+&lt;mat-icon&gt;home&lt;/mat-icon&gt;</pre><p>See an overview on how to use in&nbsp;<a href="https://material.angular.io/components/icon/overview" rel="nofollow">https://material.angular.io/components/icon/overview</a></p></section><h2 class='section-title'>8. State management with NGRX</h2><section class='article-content-block'><p>The theme uses ngrx for actions and state management. For official documentation on how to use ngrx refer to&nbsp;<a href="https://github.com/ngrx/platform/blob/master/docs/store/README.md"  rel="nofollow">https://github.com/ngrx/platform/blob/master/docs/store/README.md</a>&nbsp;and&nbsp;<br><a href="https://github.com/ngrx/platform/blob/master/docs/effects/README.md" style="font-size: 15px;"  rel="nofollow">https://github.com/ngrx/platform/blob/master/docs/effects/README.md</a></p>
+<h2>Store : state management</h2>
+<p>The store module of ngrx is responsible for handling state management in the application. It is a pattern similar to redux that consists in making all updates of the state of an application being submitted by dedicated actions.</p>
+<h3>Configure Actions</h3>
+<p>The first step to get started with store is by registering actions. Actions are what components or services will call when they want to update something in the application.</p>
+<p>An action is registered in the folder src/app/store/actions/ and an example of an action is like the following :&nbsp;</p>
+<pre>
+export const ALBUMS_ACTION_TYPES = { ALBUMS_OF_ARTIST_UPDATED: 'ALBUMS_OF_ARTIST_UPDATED',
+};
+// actions
+export class AlbumsOfArtistUpdatedAction implements Action { 
+  type: string = ALBUMS_ACTION_TYPES.ALBUMS_OF_ARTIST_UPDATED; 
+  constructor(public payload: any) { }
+}
+export type Actions = RouterAction&lt;State&gt; | AlbumsOfArtistUpdatedAction;</pre>
+<p>In this case we are registering an action called "<strong>ALBUMS_OF_ARTIST_UPDATED</strong>".&nbsp;Every action has a type and a payload. the type is for identifying the action and the payload includes any information relevant to that action.</p>
+<h3>Reducers</h3>
+<p>The next step is to configure the reducer, a reducer is a function that will take an action and update the state of the app in a way that keeps the state immutable and for this making things more predictable, easier to manage (since all updates happen in these functions) and also more performant in the end. Lets look at the reducer that takes the action defined previously&nbsp;:&nbsp;</p>
+<pre>
+export function albumsStoreReducer(state: Object = albumsInitialState, action: Actions) { 
+  switch (action.type) { 
+    case ALBUMS_ACTION_TYPES.ALBUMS_OF_ARTIST_UPDATED: 
+      const albums = { ...state }; 
+      albums[action.payload.artist] = action.payload.albums; 
+      return albums;
+    default: return state; 
+  }
+}</pre>
+<p>This function takes the action defined previously, in this case the action sends over a artist and a list of albums (in the artist payload property)&nbsp;and the reducer puts that information in the store.</p>
+<h3>Dispatching</h3>
+<p>Dispatching actions is the simpler part, just create the Action object with its type and payload and call the method dispatch in the store service (injected via Dependency injection)</p>
+<p>First we inject store</p>
+<pre>
+constructor(private store: Store&lt;State&gt;) {}</pre>
+<p>and then we can call the dispatch method :&nbsp;</p>
+<pre>
+this.store.dispatch(new PlaylistAddAction(
+  { 
+    uid: this.user.uid,  
+    owner: this.user.username, 
+    name: name, 
+    imageFile: imageFile, 
+  }
+));</pre>
+<h2>Effects : side effects management</h2>
+<p>Ngrx effects are a pattern to making side effects easier to follow and managed by moving side effects to defined classes.&nbsp;Side effects can be considered anything that communicates to the outside world, meaning something that calls a external API or does some authentication via external provider.</p>
+<p>Because these external calls are unpredictable, they can fail they can hang, or in a refactor we might change the API or the protocol being used its a good idea to separate them in a centralised place.</p>
+<h3>Effect method</h3>
+<p>An effect method looks like this :&nbsp;</p>
+<pre>
+@Effect() login$: Observable&lt;action&gt; = this.actions$
+        .ofType(USER_ACTION_TYPES.LOGIN)
+        .map((action: UserLoginAction) =&gt; action.payload)
+        .switchMap((payload) =&gt; {
+            // Transform firebase auth to an observable.
+            return Observable.fromPromise(this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()))
+                .map(user =&gt; new SaveUserAction(user))
+                .catch(res =&gt; Observable.of(new UserUnauthAction({})));
+        });&lt;/action&gt;</pre>
+<p>Here we are using the firebase auth provider, and returning the action SaveUserAction when succeeded, and if the authentication fails we launch another action called&nbsp;UserUnauthAction. These effects classes should always return actions in the end, which means they react on an action (in this case&nbsp;USER_ACTION_TYPES.LOGIN) and return a new action.</p></section></body></html>
