@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 
 import { Enroll } from './enroll';
+import { EnrollService } from './enroll.service';
 
 @Component({
   selector: 'app-forms',
@@ -19,8 +22,6 @@ export class FormsComponent implements OnInit {
   // Autocomplete
   stateCtrl: FormControl;
   filteredStates: Observable<any[]>;
-  joiningYear;
-  joiningClass;
 
   states: any[] = [
     {
@@ -114,7 +115,7 @@ export class FormsComponent implements OnInit {
   }
   private _tickInterval = 1;
 
-  constructor() {
+  constructor(private enrollService: EnrollService, private router: Router) {
     this.stateCtrl = new FormControl();
     this.filteredStates = this.stateCtrl.valueChanges
       .startWith(null)
@@ -130,8 +131,23 @@ export class FormsComponent implements OnInit {
       state.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
   }
 
+
   save() {
-    console.log('submitted');
+    /*console.log('submitted');*/
+    this.enrollService.save(this.enroll, result=>{
+      if(result){
+        alert("Tak fordi du har indsendt formularen. Vi kontakter dig snart.");
+        this.router.navigate(["/"]);
+      }
+    });
+  }
+
+  checkProperties(obj) {
+      for (var key in obj) {
+          if (obj[key] !== null && obj[key] != "")
+              return false;
+      }
+      return true;
   }
 
 }

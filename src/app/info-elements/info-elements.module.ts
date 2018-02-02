@@ -10,6 +10,9 @@ import { UiChartsComponent } from './components/ui-charts/ui-charts.component';
 import { UiIconsComponent } from './components/ui-icons/ui-icons.component';
 import { MatAutocompleteModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule } from '@angular/material';
 
+
+import { EnrollService } from "./components/forms/enroll.service";
+
 export const routes = [
   { path: '', component: UiComponent, pathMatch: 'full' },
   { path: 'buttons', component: ButtonsComponent, pathMatch: 'full' },
@@ -29,6 +32,7 @@ export const routes = [
     MatSelectModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [UiComponent, ButtonsComponent, FormsComponent, UiComponentsComponent, UiChartsComponent, UiIconsComponent]
+  declarations: [UiComponent, ButtonsComponent, FormsComponent, UiComponentsComponent, UiChartsComponent, UiIconsComponent],
+  providers: [EnrollService]
 })
 export class UiElementsModule { }

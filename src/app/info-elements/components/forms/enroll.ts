@@ -1,5 +1,5 @@
 export class Enroll {
-	constructor(public schoolName: string = "Glamsdalens Idrætsefterskole", public studentName: string = ""){
+	constructor(public schoolName: string = "Glamsdalens Idrætsefterskole", public studentFirstName: string = "", public studentSurname: string = "", public studentEmail: string = "", public studentPhone: string = "", public studentAddress1: string = "", public studentAddress2: string = "", public studentCity: string = "", public studentState: string = "", public studentPin: string = "", public studentFodbold: string = "", public studentHandbold: string = "", public studentBadminton: string = "", public studentAdventure: string = "", public studentDans: string = "", public studentFitness: string = "", public studentTriatlon: string = "", public studentEsport: string = "", public studentJoiningYear: string = "", public studentJoiningClass: string = "", public studentGroup: string = "", public studentJoinDate: string = ""){
 		
 	}	
 }
