@@ -13,7 +13,10 @@
             align-items: top;
             justify-content: space-between;
             .charts-column {
-                width: 49%;
+                width: 59%;
+                &:last-child {
+                    width: 39%;
+                }
             }
         }
     }

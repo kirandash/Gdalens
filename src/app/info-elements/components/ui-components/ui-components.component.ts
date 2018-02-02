@@ -19,28 +19,28 @@ export class UiComponentsComponent implements OnInit {
   // Pie date
   chartData = [
     {
-      'name': 'Germany',
-      'value': 40632
+      'name': '360 grader',
+      'value': 2
     },
     {
-      'name': 'USA',
-      'value': 49737
+      'name': 'Triatlon',
+      'value': 1
     },
     {
-      'name': 'France',
-      'value': 36745
+      'name': 'Fitness',
+      'value': 3
     },
     {
-      'name': 'UK',
-      'value': 36240
+      'name': 'Håndbold',
+      'value': 2
     },
     {
-      'name': 'Spain',
-      'value': 33000
+      'name': 'Dans',
+      'value': 2
     },
     {
-      'name': 'Italy',
-      'value': 35800
+      'name': 'Fodbold',
+      'value': 5
     }
   ];
   colorScheme = {
@@ -136,30 +136,38 @@ export class UiComponentsComponent implements OnInit {
     ]
   };
 
-  userBoxImage = 'assets/images/social3.png';
+  userBoxImage = 'assets/images/people/henry.jpg';
 
-  folders = [
+  batch1days = [
     {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
+      name: '360 grader',
+      updated: new Date('1/1/17'),
     },
     {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
+      name: 'Triatlon',
+      updated: new Date('1/17/17'),
     },
     {
-      name: 'Work',
-      updated: new Date('1/28/16'),
+      name: 'Fitness',
+      updated: new Date('1/28/17'),
     }
   ];
-  notes = [
+  batch2days = [
     {
-      name: 'Vacation Itinerary',
-      updated: new Date('2/20/16'),
+      name: 'Håndbold',
+      updated: new Date('2/20/17'),
     },
     {
-      name: 'Kitchen Remodel',
-      updated: new Date('1/18/16'),
+      name: 'Triatlon',
+      updated: new Date('1/18/17'),
+    },
+    {
+      name: 'Fodbold',
+      updated: new Date('2/01/17'),
+    },
+    {
+      name: 'Dans',
+      updated: new Date('3/12/17'),
     }
   ];
 

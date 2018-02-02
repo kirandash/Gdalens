@@ -66,3 +66,7 @@
 .mat-slider-vertical {
     height: 300px;
 }
+
+:host ::ng-deep .mat-toolbar .mat-toolbar-row {
+    overflow: hidden;
+}

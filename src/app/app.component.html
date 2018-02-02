@@ -1,4 +1,5 @@
-<div class="wrapper" [ngClass]="{'zondimo-dark-theme': darkTheme}">
+<!-- <div class="wrapper" [ngClass]="{'zondimo-dark-theme': darkTheme}"> -->
+<div class="wrapper zondimo-dark-theme">
   <app-header *ngIf="!singlePage" [user]="user | async" [title]="title" (onToggleSidenav)="toggleSidenav()" (onLogout)="logout()"
     (oncreatePlaylist)="createPlaylist()" (onToggleTheme)="toggleTheme()"></app-header>
   <mat-sidenav-container class="main-app" [ngClass]="{'player-collapsed': playerCollapsed}">
@@ -8,6 +9,6 @@
     <div class="main-content">
       <router-outlet></router-outlet>
     </div>
-    <app-player-controller *ngIf="!singlePage" (onTogglePlayer)="playerCollapseToggle($event)"></app-player-controller>
+    <!-- <app-player-controller *ngIf="!singlePage" (onTogglePlayer)="playerCollapseToggle($event)"></app-player-controller> -->
   </mat-sidenav-container>
 </div>

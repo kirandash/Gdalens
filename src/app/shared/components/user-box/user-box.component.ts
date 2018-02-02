@@ -13,24 +13,19 @@ export class UserBoxComponent implements OnInit {
   // icons
   icons: IconItem[] = [
     {
-      name: 'alarm_on',
+      name: 'phone',
       color: 'primary',
-      text: 'Alarm',
+      text: '64 72 36 60',
     },
     {
-      name: 'portable_wifi_off',
+      name: 'email',
       color: 'accent',
-      text: 'Wifi',
+      text: 'henrik@glamsdalen.dk',
     },
     {
-      name: 'fingerprint',
+      name: 'verified_user',
       color: 'warn',
-      text: 'Unlock',
-    },
-    {
-      name: 'power_settings_new',
-      color: 'primary',
-      text: 'Power off',
+      text: 'Huslærer - Hus 19',
     }
   ];
 

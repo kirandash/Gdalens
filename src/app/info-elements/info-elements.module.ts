@@ -13,8 +13,8 @@ import { MatAutocompleteModule, MatDatepickerModule, MatNativeDateModule, MatSel
 export const routes = [
   { path: '', component: UiComponent, pathMatch: 'full' },
   { path: 'buttons', component: ButtonsComponent, pathMatch: 'full' },
-  { path: 'forms', component: FormsComponent, pathMatch: 'full' },
-  { path: 'components', component: UiComponentsComponent, pathMatch: 'full' },
+  { path: 'tilmelding-besoegsdag-4-2-2018', component: FormsComponent, pathMatch: 'full' },
+  { path: 'profile', component: UiComponentsComponent, pathMatch: 'full' },
   { path: 'charts', component: UiChartsComponent, pathMatch: 'full' },
   { path: 'icons', component: UiIconsComponent, pathMatch: 'full' },
 ];

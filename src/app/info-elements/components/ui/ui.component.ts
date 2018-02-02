@@ -8,35 +8,29 @@ import { Component, OnInit } from '@angular/core';
 export class UiComponent implements OnInit {
   uiElementsBoxes = [
     {
-      name: 'Buttons',
-      icon: 'code',
-      subtext: 'Button styles for the template',
-      url: '/ui/buttons',
-    },
-    {
-      name: 'Components',
+      name: 'Rapport',
       icon: 'settings_input_component',
       subtext: 'Form elements from Material design',
-      url: '/ui/components',
+      url: '/info/components',
     },
     {
       name: 'Forms',
       icon: 'transform',
       subtext: 'Form elements from Material design',
-      url: '/ui/forms',
+      url: '/info/tilmelding-besoegsdag-4-2-2018',
     },
     {
       name: 'Charts',
       icon: 'show_chart',
       subtext: 'Custom pluggable charts',
-      url: '/ui/charts',
-    },
+      url: '/info/charts',
+    }/*,
     {
       name: 'Icons',
       icon: 'photo_size_select_small',
       subtext: 'Material design icons ready to use',
       url: '/ui/icons',
-    }
+    }*/
   ];
   constructor() { }
 

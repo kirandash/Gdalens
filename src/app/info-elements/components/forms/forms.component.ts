@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 
+import { Enroll } from './enroll';
+
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
@@ -12,9 +14,13 @@ import 'rxjs/add/operator/map';
 })
 export class FormsComponent implements OnInit {
 
+  enroll: Enroll;
+
   // Autocomplete
   stateCtrl: FormControl;
   filteredStates: Observable<any[]>;
+  joiningYear;
+  joiningClass;
 
   states: any[] = [
     {
@@ -59,7 +65,29 @@ export class FormsComponent implements OnInit {
     'Autumn',
   ];
 
+  years = [
+    '2018/2019',
+    '2019/2020',
+    '2020/2021',
+    '2021/2022',
+    '2022/2023'
+  ];
+
+  classes = [
+    '9. KLASSE',
+    '10. KLASSE'
+  ];
+
   // Select
+  persons = [
+    { value: 'person-1', viewValue: 'Alene' },
+    { value: 'person-2', viewValue: 'To' },
+    { value: 'person-3', viewValue: 'Tre' },
+    { value: 'person-4', viewValue: 'Fire' },
+    { value: 'person-5', viewValue: 'Fem' },
+    { value: 'person-6', viewValue: 'Seks' }
+  ];
+
   foods = [
     { value: 'steak-0', viewValue: 'Steak' },
     { value: 'pizza-1', viewValue: 'Pizza' },
@@ -94,12 +122,16 @@ export class FormsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.enroll = new Enroll();
   }
 
   filterStates(name: string) {
     return this.states.filter(state =>
       state.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
+  }
+
+  save() {
+    console.log('submitted');
   }
 
 }

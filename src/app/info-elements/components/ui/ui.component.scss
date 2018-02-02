@@ -4,7 +4,7 @@
     flex-direction: column;
 }
 
-.ui-elements-grid {
+.info-elements-grid {
     display: flex;
     flex-flow: column;
     @include breakpoint($narrow-devices) {
@@ -13,7 +13,7 @@
     }
 }
 
-.ui-element-card {
+.info-element-card {
     margin-top: 15px;
     flex: 1;
     @include breakpoint($narrow-devices) {

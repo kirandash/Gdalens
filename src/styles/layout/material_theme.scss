@@ -5,8 +5,8 @@
 @import "./../../app/components/sidebar/_sidebar-theme.scss";
 @import "./../../app/components/player-controller/player-controller/_player-controller-custom-theme.scss";
 @import "./../../app/shared/components/playable-list/_playable-list-theme-custom.scss";
-@import "./../../app/ui-elements/components/ui-components/_ui-components-theme-custom.scss";
-@import "./../../app/ui-elements/components/ui-charts/_ui-charts-theme-custom.scss";
+@import "./../../app/info-elements/components/ui-components/_ui-components-theme-custom.scss";
+@import "./../../app/info-elements/components/ui-charts/_ui-charts-theme-custom.scss";
 @import "./../../app/artists/artist-country-fan-chart/_artist-country-fan-chart-theme-custom.scss";
 
 @mixin custom-theme($theme) {
