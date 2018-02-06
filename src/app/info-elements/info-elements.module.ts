@@ -12,11 +12,13 @@ import { MatAutocompleteModule, MatDatepickerModule, MatNativeDateModule, MatSel
 
 
 import { EnrollService } from "./components/forms/enroll.service";
+import { TempFormsComponent } from './components/temp-forms/temp-forms.component';
 
 export const routes = [
   { path: '', component: UiComponent, pathMatch: 'full' },
   { path: 'buttons', component: ButtonsComponent, pathMatch: 'full' },
   { path: 'tilmelding-besoegsdag-4-2-2018', component: FormsComponent, pathMatch: 'full' },
+  { path: 'tempforms', component: TempFormsComponent, pathMatch: 'full' },
   { path: 'profile', component: UiComponentsComponent, pathMatch: 'full' },
   { path: 'charts', component: UiChartsComponent, pathMatch: 'full' },
   { path: 'icons', component: UiIconsComponent, pathMatch: 'full' },
@@ -32,7 +34,7 @@ export const routes = [
     MatSelectModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [UiComponent, ButtonsComponent, FormsComponent, UiComponentsComponent, UiChartsComponent, UiIconsComponent],
+  declarations: [UiComponent, ButtonsComponent, FormsComponent, UiComponentsComponent, UiChartsComponent, UiIconsComponent, TempFormsComponent],
   providers: [EnrollService]
 })
 export class UiElementsModule { }

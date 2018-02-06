@@ -1,0 +1,59 @@
+<h3>Besøgsdag søndag d. 4/2-2018 kl. 14:00</h3>
+<div class="forms-wrapper">
+  <div class="forms-column">
+    <app-viewer-box [title]="'STEP 1: INFORMATION' | uppercase">
+      <div class="view-content">
+        <form class="example-form" #userForm = "ngForm" (ngSubmit)="onSubmit(userForm.value)">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Navn og efternavn på skole (disabled)" disabled value="Glamsdalens Idrætsefterskole" name="schoolName" >
+          </mat-form-field>
+
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Navn og på elev" name="studentFirstName" [ngModel]='studentName'>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Efternavn og på elev" name="studentSurname" [(ngModel)]='studentLastName'>
+                </mat-form-field>
+                {{studentLastName}}
+              </td>
+            </tr>
+          </table>
+
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Forældre email" name="studentEmail" ngModel>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Forældre telefon" name="studentPhone" ngModel>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+		
+		<div ngModelGroup="address">
+          <p>
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Address" name="studentAddress1" ngModel>1600 Amphitheatre Pkwy</textarea>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <textarea matInput placeholder="Address 2" name="studentAddress2" ngModel></textarea>
+            </mat-form-field>
+          </p>
+		</div>
+
+          <p><button type="submit" class="btn btn-primary">Submit</button></p>
+        </form>
+      </div>
+    </app-viewer-box>
+
+  </div>
+</div>
