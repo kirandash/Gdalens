@@ -12,8 +12,9 @@
             <tr>
               <td>
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Navn og på elev" name="studentFirstName" [ngModel]='studentName'>
+                  <input matInput placeholder="Navn og på elev" name="studentFirstName" [ngModel]='studentName' #firstName required>
                 </mat-form-field>
+                <strong>{{firstName.className}}</strong>                
               </td>
               <td>
                 <mat-form-field class="example-full-width">
@@ -28,8 +29,9 @@
             <tr>
               <td>
                 <mat-form-field class="example-full-width">
-                  <input matInput placeholder="Forældre email" name="studentEmail" ngModel>
+                  <input #emailRef='ngModel' required matInput placeholder="Forældre email" name="studentEmail" ngModel>
                 </mat-form-field>
+                <p [hidden]="emailRef.valid || emailRef.pristine">Please fill this</p>
               </td>
               <td>
                 <mat-form-field class="example-full-width">
